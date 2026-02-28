@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plombier Clim79 - Expert Plumbing Niort</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 900: '#0f172a', 800: '#1e293b' },
+                        teal: { 500: '#14b8a6', 600: '#0d9488' },
+                        gold: { 500: '#f59e0b' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="overflow-x-hidden antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="wrench" class="text-teal-600 h-6 w-6"></i>
+                    <span class="font-serif font-bold text-xl tracking-tight text-slate-900">Clim79</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-teal-600 transition-colors">About</a>
+                    <a href="#services" class="text-sm font-medium text-gray-600 hover:text-teal-600 transition-colors">Services</a>
+                    <a href="#reviews" class="text-sm font-medium text-gray-600 hover:text-teal-600 transition-colors">Reviews</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-teal-600 transition-colors btn-shine">Contact Us</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-teal-600 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 rounded-md">About</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 rounded-md">Services</a>
+                <a href="#reviews" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 rounded-md">Reviews</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-teal-600 font-bold bg-teal-50 rounded-md mt-2">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-gradient text-white">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-teal-500 opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-gold-500 opacity-5 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-teal-300">
+                    <span class="flex text-gold-500">
+                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        <i data-lucide="star-half" class="h-4 w-4 fill-current"></i>
+                    </span>
+                    <span id="hero-rating-text">4.7 (15 Reviews)</span>
+                </div>
+                
+                <h1 id="hero-headline" class="text-5xl lg:text-7xl font-serif font-bold leading-tight">
+                    Mastery in Every <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">Drop & Drain.</span>
+                </h1>
+                
+                <p id="hero-subheadline" class="text-lg text-slate-300 max-w-lg leading-relaxed">
+                    Loading content...
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="tel:+33668590629" class="px-8 py-4 rounded-full bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold text-center transition-all shadow-lg shadow-teal-500/20 btn-shine flex items-center justify-center gap-2">
+                        <i data-lucide="phone" class="h-5 w-5"></i>
+                        <span id="hero-cta-text">Call Now</span>
+                    </a>
+                    <a href="#services" class="px-8 py-4 rounded-full bg-transparent border border-white/20 text-white hover:bg-white/5 font-medium text-center transition-all flex items-center justify-center gap-2">
+                        <span>Our Services</span>
+                        <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative hidden lg:block">
+                <!-- Image Container with Glassmorphism -->
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
+                   <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1000&auto=format&fit=crop" alt="Premium Plumbing Tools" class="w-full h-auto object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                   <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent">
+                       <div class="flex items-center gap-4">
+                           <div class="bg-teal-500 p-3 rounded-full">
+                               <i data-lucide="shield-check" class="h-6 w-6 text-slate-900"></i>
+                           </div>
+                           <div>
+                               <p class="font-bold text-white">Licensed & Insured</p>
+                               <p class="text-xs text-slate-400">100% Satisfaction Guarantee</p>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+                <!-- Decorative Elements -->
+                <div class="absolute -z-10 top-10 -right-10 w-full h-full border-2 border-teal-500/20 rounded-2xl"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-6">
+                <span class="text-teal-600 font-semibold tracking-wider text-sm uppercase">About Us</span>
+                <h2 id="about-title" class="text-4xl font-serif font-bold text-slate-900">Excellence in Niort</h2>
+                <p id="about-desc" class="text-lg text-gray-600 leading-relaxed">
+                    <!-- JS will fill this -->
+                </p>
+                <div class="pt-8 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-slate-900">15+</div>
+                        <div class="text-sm text-gray-500 mt-1">Years Exp.</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-slate-900">24/7</div>
+                        <div class="text-sm text-gray-500 mt-1">Support</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-slate-900">500+</div>
+                        <div class="text-sm text-gray-500 mt-1">Projects</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-slate-900">100%</div>
+                        <div class="text-sm text-gray-500 mt-1">Reliable</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <span class="text-teal-600 font-semibold tracking-wider text-sm uppercase">Our Expertise</span>
+                    <h2 class="text-4xl font-serif font-bold text-slate-900 mt-2">Comprehensive Plumbing Solutions</h2>
+                </div>
+                <a href="#contact" class="group flex items-center gap-2 text-slate-900 font-medium hover:text-teal-600 transition-colors">
+                    Get a Quote <i data-lucide="arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Services injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+         <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Trusted by Niort</h2>
+                <div class="flex justify-center items-center gap-2 text-gold-500 mb-2">
+                    <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                    <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                    <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                    <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                    <i data-lucide="star-half" class="h-6 w-6 fill-current"></i>
+                </div>
+                <p class="text-slate-400">Based on 15 verified Google reviews</p>
+            </div>
+
+            <div id="reviews-grid" class="grid md:grid-cols-3 gap-8">
+                <!-- Reviews injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Info -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-teal-600 font-semibold tracking-wider text-sm uppercase">Contact Us</span>
+                        <h2 class="text-4xl font-serif font-bold text-slate-900 mt-2">Ready to Fix It?</h2>
+                        <p class="text-gray-600 mt-4">Whether it's an emergency or a planned renovation, we are here to help you.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-teal-50 p-3 rounded-lg text-teal-600 mt-1">
+                                <i data-lucide="map-pin" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900">Visit Us</h3>
+                                <p class="text-gray-600" id="contact-address">Loading...</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-teal-50 p-3 rounded-lg text-teal-600 mt-1">
+                                <i data-lucide="phone" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900">Call Anytime</h3>
+                                <p class="text-gray-600 text-lg font-medium" id="contact-phone">Loading...</p>
+                                <p class="text-sm text-gray-500">Available 08:00 – 18:00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-teal-50 p-3 rounded-lg text-teal-600 mt-1">
+                                <i data-lucide="clock" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900">Opening Hours</h3>
+                                <p class="text-gray-600" id="contact-hours">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Embed -->
+                    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-lg border border-gray-200 map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.947234674064!2d-0.46399999999999997!3d46.3265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4807304f4a4a4a4b%3A0x4a4a4a4a4a4a4a4a!2s32%20Rue%20du%20Vieux%20Fourneau%2C%2079000%20Niort%2C%20France!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-slate-50 p-8 md:p-10 rounded-3xl shadow-sm border border-gray-100">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Send a Message</h3>
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message sent! We will contact you shortly.');">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-gray-700">Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all" placeholder="John Doe" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-gray-700">Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all" placeholder="+33 ..." required>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700">Service Needed</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all bg-white">
+                                <option>General Repair</option>
+                                <option>Emergency</option>
+                                <option>Installation</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-700">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all" placeholder="Describe your issue..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-slate-900 text-white font-bold rounded-lg hover:bg-teal-600 transition-colors btn-shine">
+                            Send Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <i data-lucide="wrench" class="text-teal-500 h-6 w-6"></i>
+                        <span class="font-serif font-bold text-xl">Plombier Clim79</span>
+                    </div>
+                    <p class="max-w-xs text-sm leading-relaxed">
+                        Professional plumbing services in Niort. Committed to quality, speed, and transparency since establishment.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-teal-400 transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-teal-400 transition-colors">Services</a></li>
+                        <li><a href="#reviews" class="hover:text-teal-400 transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-teal-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-teal-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition-colors">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2026 Plombier Clim79. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="h-4 w-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

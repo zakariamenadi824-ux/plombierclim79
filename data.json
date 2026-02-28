@@ -1,0 +1,58 @@
+{
+  "company": {
+    "name": "Plombier Clim79",
+    "rating": 4.7,
+    "reviewCount": 15,
+    "phone": "+33 6 68 59 06 29",
+    "address": "32 N Rue du Vieux Fourneau, 79000 Niort, France",
+    "hours": "08:00 – 18:00"
+  },
+  "hero": {
+    "headline": "Expert Plumbing in Niort",
+    "subheadline": "Professional reliability meets modern efficiency. Rated 4.7/5 by your neighbors.",
+    "cta": "Emergency Service"
+  },
+  "about": {
+    "title": "Why Choose Clim79?",
+    "description": "We don't just fix pipes; we restore peace of mind. With years of expertise in Niort, we bring a level of precision and professionalism rarely seen in the trade. Fast, clean, and reliable."
+  },
+  "services": [
+    {
+      "title": "General Repairs",
+      "description": "Leak detection, pipe replacement, and swift fixes for daily inconveniences.",
+      "icon": "wrench"
+    },
+    {
+      "title": "Water Heaters",
+      "description": "Installation and maintenance to ensure your showers are always warm.",
+      "icon": "flame"
+    },
+    {
+      "title": "Kitchen & Bath",
+      "description": "Renovations and fixture installations for modern, functional spaces.",
+      "icon": "droplets"
+    },
+    {
+      "title": "Emergency",
+      "description": "24/7 rapid response for critical failures that can't wait.",
+      "icon": "siren"
+    }
+  ],
+  "reviews": [
+    {
+      "author": "Yannick Malecot",
+      "stars": 5,
+      "text": "Excellent service. The technician arrived on time and fixed the leak quickly. Very professional."
+    },
+    {
+      "author": "Zach Bah",
+      "stars": 5,
+      "text": "Top notch experience. They installed my new water heater efficiently. Highly recommended for anyone in Niort."
+    },
+    {
+      "author": "Marie L.",
+      "stars": 4,
+      "text": "Quick response and fair pricing. The work was done cleanly."
+    }
+  ]
+}

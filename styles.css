@@ -1,0 +1,93 @@
+/* Base Reset & Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ffffff;
+  color: var(--color-slate-900);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Utilities */
+.text-gold {
+  color: var(--color-gold-500);
+}
+
+.bg-slate-gradient {
+  background: linear-gradient(135deg, var(--color-slate-900) 0%, var(--color-slate-800) 100%);
+}
+
+.text-gradient-teal {
+  background: linear-gradient(to right, var(--color-teal-500), var(--color-teal-600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+.reveal-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-text.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Premium Card Hover */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button Shine Effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+.btn-shine:hover::after {
+  left: 150%;
+  transition: left 0.7s ease-in-out;
+}
+
+/* Map Overlay */
+.map-container iframe {
+  filter: grayscale(100%) invert(10%) contrast(80%);
+  transition: filter 0.3s;
+}
+
+.map-container:hover iframe {
+  filter: none;
+}
